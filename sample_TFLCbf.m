@@ -86,15 +86,12 @@ target = S1_1;
 mix = X_2;
 Y_MPDR = MVDRbf(mix, target);
 
-% switching beamformers
-% Y_TFS_MVDR = MPSbf(X, train_S, train_N_i, 'MVDR', is_binary);
-
-% lienar combination beamformers
+% TFLC beamformers
 target = S1_1;
 interfs = S2_1 + S3_1 + S4_1;           % TFLC of MVDR beamformer
 % interfs = X_1;                        % TFLC of MPDR beamformer
 mix = X_2;
-RTF = calcRTF(target);
+RTF = calcRTF(target);                  % relative transfer function
 Y_TFS = TFLCbf(mix, RTF, interfs, n_iter, K, 'TFS');
 Y_TFLC = TFLCbf(mix, RTF, interfs, n_iter, K, 'TFLC');
 Y_RTFLC = TFLCbf(mix, RTF, interfs, n_iter, K, 'RTFLC');
