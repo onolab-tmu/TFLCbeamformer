@@ -60,8 +60,8 @@ function [y, w_k, m_k] = TFLCbf(x, a, ref_x, n_iter, K, tfs_name)
     end
 
     % initialize m_k
-    m_k = MPS(y_k, is_binary);
-    ref_m_k = MPS(ref_y_k, is_binary);
+    m_k = calcBFM(y_k, is_binary);
+    ref_m_k = calcBFM(ref_y_k, is_binary);
 
     %% update
     fprintf('Iteration: ');
