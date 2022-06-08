@@ -1,4 +1,5 @@
 function [m, d] = case2(AB)
+%% case2: compute the closest point to the origin on the given line
 %% AB: (y1, y2)
 %% m: (m_1, m_2) soft mask
 %% d: distance

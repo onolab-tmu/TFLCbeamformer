@@ -1,6 +1,7 @@
-function m = case_general(y_k, tf)
-% y: (y1, ..., yK)
-% m: (m1, ..., mK)
+function m = case_general(y_k)
+%% case3: compute the point closest to the origin inside the convex hull
+%% y: (y1, ..., yK)
+%% m: (m1, ..., mK)
 
 K = length(y_k);
 m = zeros(K, 1);
