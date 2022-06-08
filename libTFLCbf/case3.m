@@ -1,4 +1,5 @@
 function m = case3(ABC)
+%% case3: compute the point closest to the origin inside the given triangle
 %% ABC: (y1, y2, y3);
 %% m: (m_1, m_2, m_3) soft mask
 
@@ -21,7 +22,7 @@ y3 = vertex(2, 3);
 origin_is_inside = is_in_triangle(vertex, [0; 0]);
 
 % check whether the three points on the same straight line
-is_line = ((x3 - x1) * (y2 - y1)) - ((x2 - x1) * (y3 - y1)) < 1e-10;
+is_line = abs(((x3 - x1) * (y2 - y1)) - ((x2 - x1) * (y3 - y1))) < 1e-10;
 
 if origin_is_inside && not(is_line)
     % compute the coefficients of the line AO and BC
